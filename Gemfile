@@ -1,15 +1,15 @@
 source 'https://rubygems.org'
 
-ruby '2.3.1'
+ruby '2.5.1'
 
-gem 'rails', '4.2.7.1'
+gem 'rails', '5.2.0'
+gem 'bootsnap', '>= 1.1.0', require: false
 gem 'pg', '~> 0.15'
 
 # assets
 gem 'sassc-rails'
 gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.1.0'
-gem 'jbuilder', '~> 2.0'
+gem 'coffee-rails'
 
 # jquery & turbolinks
 gem 'jquery-rails'
@@ -40,39 +40,34 @@ gem 'puma'
 # memory tuning
 gem 'memtuner', github: 'shunichi/memtuner-ruby'
 
-group :doc do
-  gem 'sdoc', '~> 0.4.0'
-end
-
 group :development, :test do
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
   gem 'faker'
   gem 'rspec-rails'
   gem 'timecop'
   gem 'capybara'
   gem 'database_cleaner'
   gem 'launchy'
-  gem 'poltergeist', '~> 1.6.0'
+  gem 'poltergeist'
   gem 'dotenv-rails'
 
   gem 'byebug'
 end
 
 group :development do
+  gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'quiet_assets'
   gem 'letter_opener_web'
   gem 'bullet'
   gem 'erb2haml'
   gem 'heroku_san'
 end
 
-
 group :production do
-  gem 'rails_12factor'
   gem 'heroku-deflater'
   gem 'newrelic_rpm'
 end
